@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tpofpoem66ru"]
+
+[ext_resource type="Texture2D" uid="uid://cbm80wlcgwr02" path="res://models/chest_gold/chest_texture.png" id="1_4elvh"]
+
+[resource]
+albedo_texture = ExtResource("1_4elvh")
+metallic = 0.55
+metallic_specular = 0.4
+emission_energy_multiplier = 0.0
+anisotropy = -1.0
+texture_filter = 5

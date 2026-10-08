@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b5d2kgn3wh0uj"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_0n4w7"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_0nl2f"]
+[ext_resource type="Script" uid="uid://dc4hg8kq5ia5y" path="res://addons/godot-xr-tools/functions/movement_direct.gd" id="2_moo6e"]
+[ext_resource type="Script" uid="uid://b18kkstg643yw" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_l48lc"]
+[ext_resource type="Script" uid="uid://kuxqh057vr5y" path="res://addons/godot-xr-tools/functions/movement_turn.gd" id="4_l48lc"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_ptepa"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=833122959]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1248207626]
+
+[node name="LeftHand" type="XRController3D" parent="." unique_id=531963015]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" unique_id=1958463278 instance=ExtResource("1_0n4w7")]
+
+[node name="XRToolsMovementDirect" type="Node3D" parent="LeftHand" unique_id=1176364944 groups=["movement_providers", "player_body"]]
+script = ExtResource("2_moo6e")
+strafe = true
+metadata/_custom_type_script = "uid://dc4hg8kq5ia5y"
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="LeftHand" unique_id=1965300696]
+script = ExtResource("3_l48lc")
+grab_collision_mask = 262145
+ranged_collision_mask = 1
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=537689369]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" unique_id=1804978127 instance=ExtResource("2_0nl2f")]
+
+[node name="XRToolsMovementTurn" type="Node3D" parent="RightHand" unique_id=469012605]
+script = ExtResource("4_l48lc")
+metadata/_custom_type_script = "uid://kuxqh057vr5y"
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="RightHand" unique_id=977922960]
+script = ExtResource("3_l48lc")
+grab_collision_mask = 262145
+ranged_collision_mask = 1
+metadata/_custom_type_script = "uid://b18kkstg643yw"
+
+[node name="PlayerBody" parent="." unique_id=1304776953 instance=ExtResource("5_ptepa")]

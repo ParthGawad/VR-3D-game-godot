@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjvl71184epxi"]
+
+[ext_resource type="PackedScene" uid="uid://c82dj3dg1guun" path="res://models/props/banner_mounted.glb" id="1_s6nd7"]
+
+[node name="banner" type="StaticBody3D" unique_id=1802839328]
+
+[node name="banner_mounted" parent="." unique_id=1976585680 instance=ExtResource("1_s6nd7")]
